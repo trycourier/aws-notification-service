@@ -110,15 +110,15 @@ app.post('/notify', async (req, res) => {
 	let { signedIn, action, params } = req.body;
 	switch (action) {
 		case 'send-template-email':
-			// sendTemplateEmail(params)
+			sendTemplateEmail(params);
       res.send('send template email');
 			break;
 		case 'send-email':
-			// sendEmail(params)
+			sendEmail(params);
       res.send('send email');
 			break;
 		case 'create-template':
-			// console.log('');
+			createTemplate(params);
       res.send('create template');
 			break;
     default:
