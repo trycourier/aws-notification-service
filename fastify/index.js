@@ -82,6 +82,24 @@ app.post('/notify', async (req, res) => {
   }
 })
 
+app.post('/subscriber', async (req, res) => {
+  const { userId, email, phoneNum } = req.body
+  // handle new subscribers
+  res.send('handling of new subscribers not yet implemented')
+})
+
+app.delete('/subscriber/:userId', async (req, res) => {
+  const userId = req.params.userId
+  // unsubscribe user identified by userId from all emails
+  res.send('handling of unsubscribes not yet implemented')
+})
+
+app.put('/subscriber/:userId/preferences', async (req, res) => {
+  const { preferences } = req.body
+  // handle subscription preferences
+  res.send('handling of preferences not yet implemented')
+})
+
 createTemplateIfNotExists(paramsForTemplateCreation)
 
 const server = app.listen(3000, () => console.log('🚀 Server ready at: http://localhost:3000'))
