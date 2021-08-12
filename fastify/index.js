@@ -3,9 +3,11 @@ const path = require('path')
 const autoload = require('fastify-autoload')
 
 const { SESClient } = require('@aws-sdk/client-ses')
-const { SendTemplatedEmailCommand,
-  GetTemplateCommand, 
-  CreateTemplateCommand } = require('@aws-sdk/client-ses')
+const {
+  SendTemplatedEmailCommand,
+  GetTemplateCommand,
+  CreateTemplateCommand
+} = require('@aws-sdk/client-ses')
 const { fromIni } = require('@aws-sdk/credential-provider-ini')
 const REGION = 'eu-central-1'
 
@@ -59,8 +61,8 @@ async function createTemplate (params) {
 
 async function createTemplateIfNotExists (params) {
   try {
-    let queryParams = { TemplateName: params.Template.TemplateName }
-    let templateExists = await sesClient.send(new GetTemplateCommand(queryParams))
+    const queryParams = { TemplateName: params.Template.TemplateName }
+    const templateExists = await sesClient.send(new GetTemplateCommand(queryParams))
   } catch (err) {
     createTemplate(params)
   }
@@ -80,6 +82,6 @@ app.post('/notify', async (req, res) => {
   }
 })
 
-createTemplateIfNotExists(paramsForTemplateCreation);
+createTemplateIfNotExists(paramsForTemplateCreation)
 
 const server = app.listen(3000, () => console.log('🚀 Server ready at: http://localhost:3000'))
