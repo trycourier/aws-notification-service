@@ -11,16 +11,16 @@ TBD
 1. Clone the repo.
 2. In the project directory, install all dependencies:
 
-        npm install
+       npm install
 
 3. Start the development server:
 
-        npm run dev
+       npm run dev
 
 4. Query the notification endpoint (or any other endpoint):
 
-        curl -X POST \
-         -H 'Content-Type: application/json' \
-         -H 'Accept: application/json' \
-         -d '{"userId": 123, "event": "migration-confirmed"}' \
-         localhost:3000/notify
+       curl -X POST \
+        -H 'Content-Type: application/json' \
+        -H 'Accept: application/json' \
+        -d '{"userId": 123, "event": "migration-confirmed"}' \
+        localhost:3000/notify
