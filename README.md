@@ -4,7 +4,8 @@ This is an example of a notification service built with Node.js, [Fastify](https
 
 ## App architecture
 
-TBD
+![Notification service architecture](https://user-images.githubusercontent.com/40777040/133071546-9921e590-c0ea-44bc-a81f-43772d93da57.png)
+
 
 ## Running this app locally
 
